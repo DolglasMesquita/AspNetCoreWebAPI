@@ -63,3 +63,7 @@ C:\Users\Dolglas\Desktop\Visual Studio 2019\SmartSchool\SmartSchool\bin\Debug\ne
 C:\Users\Dolglas\Desktop\Visual Studio 2019\SmartSchool\SmartSchool\bin\Debug\net5.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\Dolglas\Desktop\Visual Studio 2019\SmartSchool\SmartSchool\bin\Debug\net5.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Dolglas\Desktop\Visual Studio 2019\SmartSchool\SmartSchool\bin\Debug\net5.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Dolglas\Desktop\Visual Studio 2019\SmartSchool\SmartSchool\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Dolglas\Desktop\Visual Studio 2019\SmartSchool\SmartSchool\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Dolglas\Desktop\Visual Studio 2019\SmartSchool\SmartSchool\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Dolglas\Desktop\Visual Studio 2019\SmartSchool\SmartSchool\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
