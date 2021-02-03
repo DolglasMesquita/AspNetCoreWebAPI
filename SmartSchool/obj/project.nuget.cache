@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "55dnjSpr1hH0KYLb+3X6hzb9sNBmmDoreW46EdEt6lW81rbvCNoX9ghF9Mwkym9Yaf7I6JUKkHkzbt3uIZdeeA==",
+  "dgSpecHash": "/lKfRGyVdQERe+xKrV7AJh+HqXGMgnLCRukUlku1cRHrtJWuU4GndpqFPk1hZEhysRWPRtJGe+jo9Ecm8Xoh0g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Dolglas\\Desktop\\Visual Studio 2019\\SmartSchool\\SmartSchool\\SmartSchool.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Dolglas\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
+    "C:\\Users\\Dolglas\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\Dolglas\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Dolglas\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.1\\microsoft.aspnetcore.authentication.jwtbearer.5.0.1.nupkg.sha512",
     "C:\\Users\\Dolglas\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\5.0.1\\microsoft.aspnetcore.authentication.openidconnect.5.0.1.nupkg.sha512",
@@ -52,6 +54,7 @@
     "C:\\Users\\Dolglas\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
     "C:\\Users\\Dolglas\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.7.1\\system.identitymodel.tokens.jwt.6.7.1.nupkg.sha512",
     "C:\\Users\\Dolglas\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\Dolglas\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\Dolglas\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
   "logs": []

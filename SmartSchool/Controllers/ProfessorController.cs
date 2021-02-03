@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartSchool.Data;
+using SmartSchool.Dtos;
 using SmartSchool.Models;
 using System;
 using System.Collections.Generic;
@@ -16,17 +18,19 @@ namespace SmartSchool.Controllers
     public class ProfessorController : ControllerBase
     {
         private readonly IRepository _repository;
+        private readonly IMapper _mapper;
 
-        public ProfessorController(IRepository repository)
+        public ProfessorController(IRepository repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
             var professores = _repository.GetAllProfessores(true);
-            return Ok(professores);
+            return Ok(_mapper.Map<IEnumerable<ProfessorDto>>(professores));
         }
 
         [HttpGet("{id}")]
@@ -34,8 +38,8 @@ namespace SmartSchool.Controllers
         {
             var professor = _repository.GetProfessorById(id, true);
             if (professor == null) return  BadRequest("Professor não encontrado");
-
-            return Ok(professor);
+            var ProfessorDto = _mapper.Map<ProfessorDto>(professor);
+            return Ok(ProfessorDto);
         }
 
         [HttpGet("disciplina/{disciplinaId}")]
@@ -43,8 +47,7 @@ namespace SmartSchool.Controllers
         {
             var professores = _repository.GetAllProfessoresByDisciplinaId(disciplinaId, true);
             if (professores == null) return BadRequest("Professor não encontrado");
-
-            return Ok(professores);
+            return Ok(_mapper.Map<IEnumerable<ProfessorDto>>(professores));
         }
 
         [HttpPost]
@@ -53,7 +56,7 @@ namespace SmartSchool.Controllers
             _repository.Add(professor);
             if (_repository.SaveChanges())
             {
-                return Ok(professor);
+                return Created($"/api/professor/{professor.Id}", _mapper.Map<ProfessorDto>(professor));
             }
             return BadRequest("Erro ao adicionar professor");
         }

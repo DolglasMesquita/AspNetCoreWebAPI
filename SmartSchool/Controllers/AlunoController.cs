@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartSchool.Data;
+using SmartSchool.Dtos;
 using SmartSchool.Models;
 using System;
 using System.Collections.Generic;
@@ -15,10 +17,12 @@ namespace SmartSchool.Controllers
     public class AlunoController : ControllerBase
     {
         private readonly IRepository _repository;
+        private readonly IMapper _mapper;
 
-        public AlunoController(IRepository repository)
+        public AlunoController(IRepository repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -26,7 +30,7 @@ namespace SmartSchool.Controllers
         {
             var alunos = _repository.GetAllAlunos(true);
 
-            return Ok(alunos);
+            return Ok(_mapper.Map<IEnumerable<AlunoDto>>(alunos));
         }
 
         [HttpGet("{id}")]
@@ -34,7 +38,8 @@ namespace SmartSchool.Controllers
         {
             var aluno = _repository.GetAlunoById(id, true);
             if (aluno == null) return BadRequest("Aluno não encontrado");
-            return Ok(aluno);
+            var alunoDto = _mapper.Map<AlunoDto>(aluno);
+            return Ok(alunoDto);
         }
 
         [HttpGet("disciplina/{disciplinaId}")]
@@ -42,8 +47,8 @@ namespace SmartSchool.Controllers
         {
             var alunos = _repository.GetAllAlunosByDisciplinaId(disciplinaId, true);
             if (alunos == null) return BadRequest("Aluno não encontrado");
-
-            return Ok(alunos);
+             
+            return Ok(_mapper.Map<IEnumerable<AlunoDto>>(alunos));
         }
 
         [HttpPost]
@@ -52,7 +57,7 @@ namespace SmartSchool.Controllers
             _repository.Add(aluno);
             if (_repository.SaveChanges())
             {
-                return Ok(aluno);
+                return Created($"/api/aluno/{aluno.Id}", _mapper.Map<AlunoDto>(aluno));
             }
             return BadRequest("Aluno não cadastrado");
         }
