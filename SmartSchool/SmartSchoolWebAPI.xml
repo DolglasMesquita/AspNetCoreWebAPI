@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartSchool</name>
+    </assembly>
+    <members>
+        <member name="T:SmartSchool.Controllers.AlunoController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SmartSchool.Controllers.AlunoController.#ctor(SmartSchool.Data.IRepository,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="repository"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:SmartSchool.Controllers.AlunoController.Get(SmartSchool.Helpers.PageParams)">
+            <summary>
+            Método responsável por retornar todos os alunos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.Controllers.AlunoController.GetById(System.Int32)">
+            <summary>
+            Método responsável por retornar alunos correspondente ao id passado por parâmetro
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.Controllers.AlunoController.Post(SmartSchool.Models.Aluno)">
+            <summary>
+            Método responsável por cadastrar alunos
+            </summary>
+            <param name="aluno"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.Controllers.AlunoController.Put(System.Int32,SmartSchool.Models.Aluno)">
+            <summary>
+            Método responsável por editar aluno correspondente ao id recebido por parâmetro
+            </summary>
+            <param name="id"></param>
+            <param name="aluno"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.Controllers.AlunoController.Patch(System.Int32,SmartSchool.Models.Aluno)">
+            <summary>
+            Método responsável por editar aluno correspondente ao id recebido por parâmetro
+            </summary>
+            <param name="id"></param>
+            <param name="aluno"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.Controllers.AlunoController.Delete(System.Int32)">
+            <summary>
+            Método responsável por remover o aluno correspondente ao id recebido por parâmetro
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

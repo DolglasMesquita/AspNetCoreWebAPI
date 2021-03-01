@@ -13,6 +13,7 @@ using SmartSchool.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace SmartSchool
@@ -42,7 +43,25 @@ namespace SmartSchool
                 opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SmartSchool", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { 
+                    Title = "SmartSchool", 
+                    Version = "v1" ,
+                    TermsOfService = new Uri("http://SeusTermosDeUso.com"),
+                    Description = "A descrição da WebAPI do SmartSchool",
+                    License = new Microsoft.OpenApi.Models.OpenApiLicense
+                    {
+                        Name = "SmartSchool License",
+                        Url = new Uri("http://licensa.com")
+                    },
+                    Contact = new Microsoft.OpenApi.Models.OpenApiContact
+                    {
+                        Name = "Dolglas Mesquita",
+                        Email = "dolglas_mesquita@hotmail.com",
+                        Url = new Uri("http://smartschool.com.br")
+                    }
+                });
+
+                c.IncludeXmlComments("SmartSchoolWebAPI.xml");
             });
         }
 

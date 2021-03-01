@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SmartSchool.Helpers;
 using SmartSchool.Models;
 using System;
 using System.Collections.Generic;
@@ -48,8 +49,21 @@ namespace SmartSchool.Data
             query = query.AsNoTracking().OrderBy(a => a.Id);
 
             return query.ToArray();
+        }
 
+        public async Task<PageList<Aluno>> GetAllAlunosAsync(PageParams pageParams, bool includeProfessor = false)
+        {
+            IQueryable<Aluno> query = _context.Alunos;
 
+            if (includeProfessor)
+            {
+                query = query.Include(a => a.AlunosDisciplinas).ThenInclude(ad => ad.Disciplina).ThenInclude(d => d.Professor);
+            }
+
+            query = query.AsNoTracking().OrderBy(a => a.Id);
+
+            //return await query.ToListAsync();
+            return await PageList<Aluno>.CreateAsync(query, pageParams.PageNumber, pageParams.PageSize);
         }
 
         public Aluno[] GetAllAlunosByDisciplinaId(int disciplinaId, bool includeProfessor = false)
